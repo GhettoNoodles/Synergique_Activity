@@ -1,31 +1,21 @@
-﻿using System.Windows;
-using System.Windows.Navigation;
-using System;
-using System.Collections.Generic;
-using System.Text;
-using Bytescout.Spreadsheet;
-using System.Diagnostics;
-using System.IO;
-using System.Linq;
-using System.Windows.Media.Animation;
-using Synergique_Activity_Formatter.Core;
+using System.Windows.Input;
 
-namespace Synergique_Activity_Formatter
-{
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
-    public partial class MainWindow
-    {  public string newSheetPath;
-        public MainWindow()
-        {
-            
-            InitializeComponent();
-          //  ReadData("C:\\Users\\jacqu\\RiderProjects\\Synergique_Activity\\Synergique_Activity_Formatter\\Copy of Activity Sumary 04-04-2023 Excel - Copy.xlsx");
-        }
-
-
-        private void Browse_OnClick(object sender, RoutedEventArgs e)
+namespace Synergique_Activity_Formatter.Core
+{ using System;
+    using System.Collections.Generic;
+    using System.Text;
+    using Bytescout.Spreadsheet;
+    using System.Diagnostics;
+    using System.IO;
+    using System.Linq;
+    using System.Windows.Media.Animation;
+    using Synergique_Activity_Formatter.Core;
+    
+    public class ReadNewSheet
+    {
+        public string newSheetPath;
+        
+        public void BrowseFile()
         {
             // Configure open file dialog box
             var dialog = new Microsoft.Win32.OpenFileDialog();
