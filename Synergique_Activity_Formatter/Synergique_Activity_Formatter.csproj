@@ -95,7 +95,12 @@
             <DependentUpon>App.xaml</DependentUpon>
             <SubType>Code</SubType>
         </Compile>
+        <Compile Include="Core\ExcelReader.cs" />
+        <Compile Include="Core\ExcelWriter.cs" />
+        <Compile Include="Core\FileManagement.cs" />
         <Compile Include="Core\Item.cs" />
+        <Compile Include="Core\JsonManager.cs" />
+        <Compile Include="Core\MonthRerouter.cs" />
         <Compile Include="Core\ObservableObject.cs" />
         <Compile Include="MainWindow.xaml.cs">
             <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -128,5 +133,6 @@
       <Folder Include="MVVM\View\" />
       <Folder Include="Theme\" />
     </ItemGroup>
+  
     <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets"/>
 </Project>

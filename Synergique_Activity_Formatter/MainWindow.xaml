@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Synergique_Activity_Formatter"
+        xmlns:core="clr-namespace:Synergique_Activity_Formatter.Core"
         mc:Ignorable="d"
         Title="MainWindow" Height="600" Width="920" WindowStyle="None" ResizeMode="NoResize"
         Background="Transparent" AllowsTransparency="True">
@@ -17,6 +18,8 @@
                 <RowDefinition Height="75" />
                 <RowDefinition />
                 <RowDefinition />
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
             <TextBlock Text="Activity" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"
                        Foreground="Azure" FontSize="30">
@@ -27,11 +30,32 @@
                 </TextBlock>
                 <Button Name="Browse" Content="Browse Files" Cursor="Hand" Click="Browse_OnClick" />
             </StackPanel>
-            <StackPanel Grid.Row="2">
+            
+            <StackPanel 
+                         Grid.Row="2">
+                <TextBlock Text="Set current Month" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="20,0,0,0" Foreground="Azure" FontSize="15">
+                </TextBlock>
+                <ComboBox x:Name="Month" SelectionChanged="Month_OnSelectionChanged" HorizontalAlignment="Left" Width="200" >
+                 <ComboBoxItem>January</ComboBoxItem>
+                 <ComboBoxItem>February</ComboBoxItem>
+                 <ComboBoxItem>March</ComboBoxItem>
+                 <ComboBoxItem>April</ComboBoxItem>
+                 <ComboBoxItem>May</ComboBoxItem>
+             </ComboBox>
+            </StackPanel>
+
+            <StackPanel Grid.Row="3">
                 <TextBlock Text="Select new Activity report" VerticalAlignment="Center" HorizontalAlignment="Left"
                            Margin="20,0,0,0" Foreground="Azure" FontSize="15">
                 </TextBlock>
                 <Button Name="Save" Content="Save To File" Cursor="Hand" Click="Save_OnClick" />
+            </StackPanel>
+            <StackPanel Grid.Row="4">
+                <TextBlock Text="Set Previous Year's Data" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="20,0,0,0" Foreground="Azure" FontSize="15">
+                </TextBlock>
+                <Button Name="BrowseData2" Content="Browse Files" Cursor="Hand" Click="BrowseData2_OnClick" />
             </StackPanel>
         </Grid>
 
