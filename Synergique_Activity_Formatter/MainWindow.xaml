@@ -15,12 +15,23 @@
             </Grid.ColumnDefinitions>
             <Grid.RowDefinitions>
                 <RowDefinition Height="75" />
-                <RowDefinition /> 
+                <RowDefinition />
+                <RowDefinition />
             </Grid.RowDefinitions>
-            <TextBlock Text="Activity" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="Azure" FontSize="30"></TextBlock>
+            <TextBlock Text="Activity" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0"
+                       Foreground="Azure" FontSize="30">
+            </TextBlock>
             <StackPanel Grid.Row="1">
-                <TextBlock Text="Select new Activity report" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="20,0,0,0" Foreground="Azure" FontSize="15"></TextBlock>
-                <Button Name="Browse" Content="Browse Files" Cursor="Hand" Click="Browse_OnClick"  />
+                <TextBlock Text="Select new Activity report" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="20,0,0,0" Foreground="Azure" FontSize="15">
+                </TextBlock>
+                <Button Name="Browse" Content="Browse Files" Cursor="Hand" Click="Browse_OnClick" />
+            </StackPanel>
+            <StackPanel Grid.Row="2">
+                <TextBlock Text="Select new Activity report" VerticalAlignment="Center" HorizontalAlignment="Left"
+                           Margin="20,0,0,0" Foreground="Azure" FontSize="15">
+                </TextBlock>
+                <Button Name="Save" Content="Save To File" Cursor="Hand" Click="Save_OnClick" />
             </StackPanel>
         </Grid>
 
