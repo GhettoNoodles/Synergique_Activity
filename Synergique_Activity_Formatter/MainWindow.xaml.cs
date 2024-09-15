@@ -39,6 +39,7 @@ namespace Synergique_Activity_Formatter
         {
             var newSheetPath = _fileManagement.BrowseNewSheet();
             _recentDataItems = _excelReader.ReadData(_jsonManager.ReadData("oldItems.txt"), newSheetPath,_jsonManager,true);
+            newDataPathText.Text = newSheetPath;
         }
 
         private void Save_OnClick(object sender, RoutedEventArgs e)
@@ -56,12 +57,18 @@ namespace Synergique_Activity_Formatter
             var oldDataPath = _fileManagement.BrowseOldData();
             _oldDataItems = _excelReader.ReadData(_oldDataItems, oldDataPath,_jsonManager,false);
             _jsonManager.SerializeToJson(_oldDataItems, "oldItems.txt");
+            oldDataPathText.Text = oldDataPath;
         }
 
         private void Month_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var inputMonth = ((ComboBoxItem)(((ComboBox)sender).SelectedItem)).Content.ToString();
             currentMonth = _monthRerouter.RerouteMonth(inputMonth);
+        }
+
+        private void LoadOnOrders_OnClick(object sender, RoutedEventArgs e)
+        {
+            throw new NotImplementedException();
         }
     }
 }

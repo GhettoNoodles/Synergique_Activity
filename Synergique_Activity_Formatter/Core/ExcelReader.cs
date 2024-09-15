@@ -57,7 +57,14 @@ namespace Synergique_Activity_Formatter.Core
                 newItem.AverageSales = (float)Math.Ceiling(sales.Sum() / 12f);
                // Console.WriteLine("Average = " + newItem.AverageSales);
                 newlyReadItems.Add(newItem);
-                currentLine += 2; //should be next inventory item
+                
+                currentLine++;
+                currentCell = incomingData.Cell(currentLine, 4);
+                if (currentCell.ValueAsString!="")
+                {
+                    newItem.CurrentStock = currentCell.ValueAsInteger;
+                }
+                currentLine ++; //should be next inventory item
                 currentCell = incomingData.Cell(currentLine, 0);
                 if (currentCell.ValueAsString == "")
                 {
@@ -80,7 +87,6 @@ namespace Synergique_Activity_Formatter.Core
                     index++;
                 }
                 jsonManager.SerializeToJson(savedItems,"oldItems.txt");
-                Console.WriteLine(savedItems.Count + ";" + newlyReadItems.Count);
             }
             return newlyReadItems;
         }

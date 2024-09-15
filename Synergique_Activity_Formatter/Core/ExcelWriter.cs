@@ -40,6 +40,9 @@ namespace Synergique_Activity_Formatter.Core
             orderSheet.Cell("D1").Value = "Maximum Level";
             orderSheet.Columns[3].Width = 70;
             orderSheet.Columns[3].AlignmentHorizontal = AlignmentHorizontal.Left;
+            orderSheet.Cell("E1").Value = "Current Stock";
+            orderSheet.Columns[4].Width = 70;
+            orderSheet.Columns[4].AlignmentHorizontal = AlignmentHorizontal.Left;
             orderSheet.Rows[0].Height = 40;
             orderSheet.Rows[0].Wrap = true;
             orderSheet.Rows[0].AlignmentVertical = AlignmentVertical.Centered;
@@ -85,6 +88,7 @@ namespace Synergique_Activity_Formatter.Core
                 orderSheet.Cell(nameLine + 2, 1).Value = avgSales;
                 orderSheet.Cell(nameLine + 2, 2).Value = avgSales * 3;
                 orderSheet.Cell(nameLine + 2, 3).Value = avgSales * 6;
+                orderSheet.Cell(nameLine + 2, 4).Value = item.CurrentStock;
                 orderSheet.Rows[nameLine + 2].BottomBorderStyle = LineStyle.Thin;
                 nameLine += 3; //next item
                 itemCounter++;
